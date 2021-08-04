@@ -7,11 +7,17 @@
   }
 
 $grey: #353535;
+$primary: #9356dc;
+$secondary: #ff79da;
+$tertiary: #99e2d0;
 
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     margin: auto;
+    h1, h2 {
+        margin-bottom: 0;
+    }
 }
 
 header {
@@ -51,8 +57,8 @@ aside {
     p {color: $grey;}
     h1 {margin-top: -15px;}
     .welcome__btn {
-        background-color: rgb(147,86,220);
-        background: linear-gradient(355deg, rgba(147,86,220,1) 0%, rgba(255,121,218,1) 100%);
+        background-color: $primary;
+        background: linear-gradient(355deg, $primary 0%, $secondary 100%);
         @include block-shadow(#bbb);
         border-radius: 23px;
         border: none;
@@ -65,41 +71,96 @@ aside {
 }
 
 nav {
-    padding-left: 18px;
-    .nav__digit {
-        display: inline-block;
-        background-color: #9356DC;
-        border-radius: 50%;
-        width : 24px;
-        height: 24px;
-        color: white;
-        position: relative;
-        left: -1px;
-        top:  54px;
-        font-weight:  400;
-        font-size:  0.9em;
-        line-height: 25px;
-        text-align: center;
-    }  
-    .fas {
-        position: relative;
-        top:  54px;
-        left: 20px;
-        color: #7e7e7e;
-        font-size: 1.1em;
-    }     
+    padding: 20px;
     .nav__btn {
         background-color: #f6f6f6;
-        padding: 20px 50px;
+        padding: 25px 50px;
         @include block-shadow(#ddd);
         border-radius: 16px/19px;
         border: none;
         width: -moz-available;          /* For Firefox */
         width: -webkit-fill-available;  /* For Chrome */
         width: stretch;  
-        margin: 10px 20px 10px 10px;
+        margin: 10px;
         font-weight:  500;
         font-size: 1.05em;
         cursor: pointer;
+        &:hover {
+            background-color: #f5edff;
+            + .fas {
+                color:$primary;
+            }
+        }
+    }
+    .fas {
+        position: relative;
+        width: 24px;
+        left: 44px;
+        bottom:  56px;
+        color: #7e7e7e;
+        font-size: 1.1em;
+    } 
+    .nav__digit {
+        display: inline-block;
+        background-color: $primary;
+        border-radius: 50%;
+        width : 24px;
+        height: 24px;
+        color: white;
+        position: relative;
+        right: 26px;
+        bottom:  55px;
+        font-weight:  400;
+        font-size:  0.9em;
+        line-height: 25px;
+        text-align: center;
+    } 
+}
+
+#restos {
+    padding: 20px;
+    .restos__indv {
+        border-radius: 12px;
+        @include block-shadow(#ddd,5px);
+        width: -moz-available;          /* For Firefox */
+        width: -webkit-fill-available;  /* For Chrome */
+        width: stretch;
+        cursor: pointer;
+        img {
+            border-radius: 12px 12px 0 0;
+            width:   100%;
+            height: 174px;
+            object-fit: cover;
+        }
+        p   {
+            padding-left: 12px;
+            padding-bottom: 12px;
+            margin-top: 0;
+        }
+        h2{
+            font-size: 1.2em;
+            padding-left: 12px;
+        }
+        .fa-heart {
+            position: absolute;
+            left: 300px;
+            margin-top: -20px;
+            font-size: 2em;
+        }
+        .fas {
+            z-index: 1;
+            opacity: 0;
+            background-color: $primary;
+            background: linear-gradient(200deg, $primary 0%, $secondary 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .fas:hover {
+            opacity: 1;
+            + .far {
+                opacity: 0;
+            }
+        }
     }
 }

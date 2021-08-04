@@ -9,6 +9,10 @@ body {
   margin: auto;
 }
 
+body h1, body h2 {
+  margin-bottom: 0;
+}
+
 header picture {
   position: relative;
   display: block;
@@ -67,36 +71,12 @@ aside .fa-map-marker-alt::before {
 }
 
 nav {
-  padding-left: 18px;
-}
-
-nav .nav__digit {
-  display: inline-block;
-  background-color: #9356DC;
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  color: white;
-  position: relative;
-  left: -1px;
-  top: 54px;
-  font-weight: 400;
-  font-size: 0.9em;
-  line-height: 25px;
-  text-align: center;
-}
-
-nav .fas {
-  position: relative;
-  top: 54px;
-  left: 20px;
-  color: #7e7e7e;
-  font-size: 1.1em;
+  padding: 20px;
 }
 
 nav .nav__btn {
   background-color: #f6f6f6;
-  padding: 20px 50px;
+  padding: 25px 50px;
   -webkit-box-shadow: 0px 3px 5px #ddd;
           box-shadow: 0px 3px 5px #ddd;
   border-radius: 16px/19px;
@@ -106,9 +86,102 @@ nav .nav__btn {
   width: -webkit-fill-available;
   /* For Chrome */
   width: stretch;
-  margin: 10px 20px 10px 10px;
+  margin: 10px;
   font-weight: 500;
   font-size: 1.05em;
   cursor: pointer;
+}
+
+nav .nav__btn:hover {
+  background-color: #f5edff;
+}
+
+nav .nav__btn:hover + .fas {
+  color: #9356dc;
+}
+
+nav .fas {
+  position: relative;
+  width: 24px;
+  left: 44px;
+  bottom: 56px;
+  color: #7e7e7e;
+  font-size: 1.1em;
+}
+
+nav .nav__digit {
+  display: inline-block;
+  background-color: #9356dc;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  color: white;
+  position: relative;
+  right: 26px;
+  bottom: 55px;
+  font-weight: 400;
+  font-size: 0.9em;
+  line-height: 25px;
+  text-align: center;
+}
+
+#restos {
+  padding: 20px;
+}
+
+#restos .restos__indv {
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 5px 5px #ddd;
+          box-shadow: 0px 5px 5px #ddd;
+  width: -moz-available;
+  /* For Firefox */
+  width: -webkit-fill-available;
+  /* For Chrome */
+  width: stretch;
+  cursor: pointer;
+}
+
+#restos .restos__indv img {
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+  height: 174px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+#restos .restos__indv p {
+  padding-left: 12px;
+  padding-bottom: 12px;
+  margin-top: 0;
+}
+
+#restos .restos__indv h2 {
+  font-size: 1.2em;
+  padding-left: 12px;
+}
+
+#restos .restos__indv .fa-heart {
+  position: absolute;
+  left: 300px;
+  margin-top: -20px;
+  font-size: 2em;
+}
+
+#restos .restos__indv .fas {
+  z-index: 1;
+  opacity: 0;
+  background-color: #9356dc;
+  background: linear-gradient(200deg, #9356dc 0%, #ff79da 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+#restos .restos__indv .fas:hover {
+  opacity: 1;
+}
+
+#restos .restos__indv .fas:hover + .far {
+  opacity: 0;
 }
 /*# sourceMappingURL=styles.css.map */
