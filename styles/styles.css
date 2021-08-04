@@ -53,17 +53,62 @@ aside .fa-map-marker-alt::before {
 }
 
 #welcome .welcome__btn {
-  background: #ab5edb;
-  background: -webkit-gradient(linear, left bottom, left top, from(#ab5edb), to(#ee74da));
-  background: linear-gradient(0deg, #ab5edb 0%, #ee74da 100%);
-  -webkit-box-shadow: 0px 1px 5px #aaa;
-          box-shadow: 0px 1px 5px #aaa;
+  background-color: #9356dc;
+  background: linear-gradient(355deg, #9356dc 0%, #ff79da 100%);
+  -webkit-box-shadow: 0px 3px 5px #bbb;
+          box-shadow: 0px 3px 5px #bbb;
   border-radius: 23px;
   border: none;
   width: 218px;
   height: 50px;
   font-size: 1.05em;
   color: white;
+  cursor: pointer;
+}
+
+nav {
+  padding-left: 18px;
+}
+
+nav .nav__digit {
+  display: inline-block;
+  background-color: #9356DC;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  color: white;
+  position: relative;
+  left: -1px;
+  top: 54px;
+  font-weight: 400;
+  font-size: 0.9em;
+  line-height: 25px;
+  text-align: center;
+}
+
+nav .fas {
+  position: relative;
+  top: 54px;
+  left: 20px;
+  color: #7e7e7e;
+  font-size: 1.1em;
+}
+
+nav .nav__btn {
+  background-color: #f6f6f6;
+  padding: 20px 50px;
+  -webkit-box-shadow: 0px 3px 5px #ddd;
+          box-shadow: 0px 3px 5px #ddd;
+  border-radius: 16px/19px;
+  border: none;
+  width: -moz-available;
+  /* For Firefox */
+  width: -webkit-fill-available;
+  /* For Chrome */
+  width: stretch;
+  margin: 10px 20px 10px 10px;
+  font-weight: 500;
+  font-size: 1.05em;
   cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */
