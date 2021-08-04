@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+header picture, aside, #welcome {
+  text-align: center;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin: auto;
+}
+
+header picture {
+  position: relative;
+  display: block;
+  -webkit-box-shadow: 0px 0px 5px #aaa;
+          box-shadow: 0px 0px 5px #aaa;
+}
+
+header picture img {
+  padding-top: 20px;
+  padding-bottom: 5px;
+  width: 165px;
+}
+
+aside {
+  background-color: #eaeaea;
+  color: #353535;
+  font-weight: 500;
+  height: 50px;
+}
+
+aside p {
+  margin: 0;
+  padding-top: 15px;
+}
+
+aside .fa-map-marker-alt::before {
+  position: relative;
+  left: -15px;
+}
+
+#welcome p {
+  color: #353535;
+}
+
+#welcome .welcome__btn {
+  background: #ab5edb;
+  background: -webkit-gradient(linear, left bottom, left top, from(#ab5edb), to(#ee74da));
+  background: linear-gradient(0deg, #ab5edb 0%, #ee74da 100%);
+  border-radius: 23px;
+  border: none;
+  width: 218px;
+  height: 50px;
+  font-size: 1.05em;
+  color: white;
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */
