@@ -39,14 +39,25 @@ aside .fa-map-marker-alt::before {
   left: -15px;
 }
 
+#welcome {
+  background-color: #f6f6f6;
+  padding: 50px;
+}
+
 #welcome p {
   color: #353535;
+}
+
+#welcome h1 {
+  margin-top: -15px;
 }
 
 #welcome .welcome__btn {
   background: #ab5edb;
   background: -webkit-gradient(linear, left bottom, left top, from(#ab5edb), to(#ee74da));
   background: linear-gradient(0deg, #ab5edb 0%, #ee74da 100%);
+  -webkit-box-shadow: 0px 1px 5px #aaa;
+          box-shadow: 0px 1px 5px #aaa;
   border-radius: 23px;
   border: none;
   width: 218px;

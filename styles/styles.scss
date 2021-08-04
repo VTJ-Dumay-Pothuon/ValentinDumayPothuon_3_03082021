@@ -42,12 +42,14 @@ aside {
 
 #welcome {
     @extend %center;
-    p {
-        color: $grey;
-    }
+    background-color: #f6f6f6;
+    padding: 50px;
+    p {color: $grey;}
+    h1 {margin-top: -15px;}
     .welcome__btn {
         background: rgb(171,94,219);
         background: linear-gradient(0deg, rgba(171,94,219,1) 0%, rgba(238,116,218,1) 100%);
+        box-shadow: 0px 1px 5px #aaa;
         border-radius: 23px;
         border: none;
         width: 218px;
