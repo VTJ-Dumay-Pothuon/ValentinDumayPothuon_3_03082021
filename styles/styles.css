@@ -70,11 +70,11 @@ aside .fa-map-marker-alt::before {
   cursor: pointer;
 }
 
-nav {
+.nav, .restos, footer {
   padding: 20px;
 }
 
-nav .nav__btn {
+.nav__btn {
   background-color: #f6f6f6;
   padding: 25px 50px;
   -webkit-box-shadow: 0px 3px 5px #ddd;
@@ -92,15 +92,15 @@ nav .nav__btn {
   cursor: pointer;
 }
 
-nav .nav__btn:hover {
+.nav__btn:hover {
   background-color: #f5edff;
 }
 
-nav .nav__btn:hover + .fas {
+.nav__btn:hover + .fas {
   color: #9356dc;
 }
 
-nav .fas {
+.nav .fas {
   position: relative;
   width: 24px;
   left: 44px;
@@ -109,7 +109,7 @@ nav .fas {
   font-size: 1.1em;
 }
 
-nav .nav__digit {
+.nav__digit {
   display: inline-block;
   background-color: #9356dc;
   border-radius: 50%;
@@ -125,11 +125,7 @@ nav .nav__digit {
   text-align: center;
 }
 
-#restos {
-  padding: 20px;
-}
-
-#restos .restos__indv {
+.restos__indv {
   border-radius: 12px;
   -webkit-box-shadow: 0px 5px 5px #ddd;
           box-shadow: 0px 5px 5px #ddd;
@@ -141,7 +137,7 @@ nav .nav__digit {
   cursor: pointer;
 }
 
-#restos .restos__indv img {
+.restos__indv img {
   border-radius: 12px 12px 0 0;
   width: 100%;
   height: 174px;
@@ -149,25 +145,25 @@ nav .nav__digit {
      object-fit: cover;
 }
 
-#restos .restos__indv p {
+.restos__indv p {
   padding-left: 12px;
   padding-bottom: 12px;
   margin-top: 0;
 }
 
-#restos .restos__indv h2 {
+.restos__indv h2 {
   font-size: 1.2em;
   padding-left: 12px;
 }
 
-#restos .restos__indv .fa-heart {
+.restos__indv .fa-heart {
   position: absolute;
   left: 300px;
   margin-top: -20px;
   font-size: 2em;
 }
 
-#restos .restos__indv .fas {
+.restos__indv .fas {
   z-index: 1;
   opacity: 0;
   background-color: #9356dc;
@@ -177,11 +173,40 @@ nav .nav__digit {
   color: transparent;
 }
 
-#restos .restos__indv .fas:hover {
+.restos__indv .fas:hover {
   opacity: 1;
 }
 
-#restos .restos__indv .fas:hover + .far {
+.restos__indv .fas:hover + .far {
   opacity: 0;
+}
+
+footer {
+  background-color: #353535;
+}
+
+footer img {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+  /*white*/
+  width: 100px;
+  padding: 8px 0;
+}
+
+footer .fas {
+  color: white;
+  font-size: 0.75em;
+  position: relative;
+  width: 18px;
+  bottom: 1px;
+}
+
+footer a {
+  color: white;
+  font-size: 0.9;
+  font-weight: 400;
+  display: block;
+  margin: 5px 0;
+  text-decoration: none;
 }
 /*# sourceMappingURL=styles.css.map */

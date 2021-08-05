@@ -70,9 +70,12 @@ aside {
     }
 }
 
-nav {
+.nav, .restos, footer {
     padding: 20px;
-    .nav__btn {
+}
+
+.nav {
+    &__btn {
         background-color: #f6f6f6;
         padding: 25px 50px;
         @include block-shadow(#ddd);
@@ -100,7 +103,7 @@ nav {
         color: #7e7e7e;
         font-size: 1.1em;
     } 
-    .nav__digit {
+    &__digit {
         display: inline-block;
         background-color: $primary;
         border-radius: 50%;
@@ -117,9 +120,8 @@ nav {
     } 
 }
 
-#restos {
-    padding: 20px;
-    .restos__indv {
+.restos {
+    &__indv {
         border-radius: 12px;
         @include block-shadow(#ddd,5px);
         width: -moz-available;          /* For Firefox */
@@ -162,5 +164,29 @@ nav {
                 opacity: 0;
             }
         }
+    }
+}
+
+footer {
+    background-color: $grey;
+    img {
+        filter: invert(1); /*white*/
+        width: 100px;
+        padding: 8px 0;
+    }
+    .fas {
+        color: white;
+        font-size: 0.75em;
+        position: relative;
+        width: 18px;
+        bottom:1px;
+    }
+    a {
+        color: white;
+        font-size: 0.9;
+        font-weight: 400;
+        display: block;
+        margin: 5px 0;
+        text-decoration: none;
     }
 }
