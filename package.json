@@ -1,0 +1,19 @@
+{
+  "name": "valentindumaypothuon_3_03082021",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch styles/styles.scss:styles/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VTJ-Dumay-Pothuon/ValentinDumayPothuon_3_03082021.git"
+  },
+  "author": "Valentin Dumay-Pothuon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VTJ-Dumay-Pothuon/ValentinDumayPothuon_3_03082021/issues"
+  },
+  "homepage": "https://github.com/VTJ-Dumay-Pothuon/ValentinDumayPothuon_3_03082021#readme"
+}

@@ -6,10 +6,11 @@
     box-shadow: 0px $height 5px $color;
   }
 
-$grey: #353535;
-$primary: #9356dc;
+$grey:      #353535;
+$light:     #f6f6f6;
+$primary:   #9356dc;
 $secondary: #ff79da;
-$tertiary: #99e2d0;
+$tertiary:  #99e2d0;
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -50,13 +51,13 @@ aside {
     }
 }
 
-#welcome {
+.welcome {
     @extend %center;
-    background-color: #f6f6f6;
+    background-color: $light;
     padding: 50px;
     p {color: $grey;}
     h1 {margin-top: -15px;}
-    .welcome__btn {
+    &__btn {
         background-color: $primary;
         background: linear-gradient(355deg, $primary 0%, $secondary 100%);
         @include block-shadow(#bbb);
@@ -74,9 +75,10 @@ aside {
     padding: 20px;
 }
 
+/*The nav has a seemingly redundant .nav class to ease nesting*/
 .nav {
     &__btn {
-        background-color: #f6f6f6;
+        background-color: $light;
         padding: 25px 50px;
         @include block-shadow(#ddd);
         border-radius: 16px/19px;
@@ -121,6 +123,11 @@ aside {
 }
 
 .restos {
+    background-color: $light;
+    h1 {padding-bottom: 25px;}
+    #resto-2 img {
+        object-position: center 61%;
+    }
     &__indv {
         border-radius: 12px;
         @include block-shadow(#ddd,5px);
@@ -133,6 +140,7 @@ aside {
             width:   100%;
             height: 174px;
             object-fit: cover;
+            object-position: center 100%;
         }
         p   {
             padding-left: 12px;
@@ -162,6 +170,22 @@ aside {
             opacity: 1;
             + .far {
                 opacity: 0;
+            }
+        }
+        &--new {
+/*By default the label is available for each featured article, but is only displayed when required*/
+            display: none;
+            position: absolute;
+            right:        42px;
+            margin-top: -160px;
+            padding:  5px 10px;
+            border-radius: 2px;
+            background-color: $tertiary;
+            color: hsl(hue($tertiary), 100%, 26.47%);
+            font-weight: 500;
+            font-size: 0.8em;
+            &#new-1, &#new-2 {
+                display: block;
             }
         }
     }

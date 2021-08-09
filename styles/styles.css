@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
-header picture, aside, #welcome {
+header picture, aside, .welcome {
   text-align: center;
 }
 
@@ -43,20 +43,20 @@ aside .fa-map-marker-alt::before {
   left: -15px;
 }
 
-#welcome {
+.welcome {
   background-color: #f6f6f6;
   padding: 50px;
 }
 
-#welcome p {
+.welcome p {
   color: #353535;
 }
 
-#welcome h1 {
+.welcome h1 {
   margin-top: -15px;
 }
 
-#welcome .welcome__btn {
+.welcome__btn {
   background-color: #9356dc;
   background: linear-gradient(355deg, #9356dc 0%, #ff79da 100%);
   -webkit-box-shadow: 0px 3px 5px #bbb;
@@ -74,6 +74,7 @@ aside .fa-map-marker-alt::before {
   padding: 20px;
 }
 
+/*The nav has a seemingly redundant .nav class to ease nesting*/
 .nav__btn {
   background-color: #f6f6f6;
   padding: 25px 50px;
@@ -125,6 +126,19 @@ aside .fa-map-marker-alt::before {
   text-align: center;
 }
 
+.restos {
+  background-color: #f6f6f6;
+}
+
+.restos h1 {
+  padding-bottom: 25px;
+}
+
+.restos #resto-2 img {
+  -o-object-position: center 61%;
+     object-position: center 61%;
+}
+
 .restos__indv {
   border-radius: 12px;
   -webkit-box-shadow: 0px 5px 5px #ddd;
@@ -143,6 +157,8 @@ aside .fa-map-marker-alt::before {
   height: 174px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center 100%;
+     object-position: center 100%;
 }
 
 .restos__indv p {
@@ -179,6 +195,24 @@ aside .fa-map-marker-alt::before {
 
 .restos__indv .fas:hover + .far {
   opacity: 0;
+}
+
+.restos__indv--new {
+  /*By default the label is available for each featured article, but is only displayed when required*/
+  display: none;
+  position: absolute;
+  right: 42px;
+  margin-top: -160px;
+  padding: 5px 10px;
+  border-radius: 2px;
+  background-color: #99e2d0;
+  color: #008766;
+  font-weight: 500;
+  font-size: 0.8em;
+}
+
+.restos__indv--new#new-1, .restos__indv--new#new-2 {
+  display: block;
 }
 
 footer {
