@@ -19,6 +19,10 @@ body {
     h1, h2 {
         margin-bottom: 0;
     }
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 }
 
 header {
@@ -90,7 +94,7 @@ aside {
         font-weight:  500;
         font-size: 1.05em;
         cursor: pointer;
-        &:hover {
+        &:hover, &:active {
             background-color: #f5edff;
             + .fas {
                 color:$primary;
@@ -165,11 +169,11 @@ aside {
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-        }
-        .fas:hover {
-            opacity: 1;
-            + .far {
-                opacity: 0;
+            &:hover, &:active {
+                opacity: 1;
+                + .far {
+                    opacity: 0;
+                }
             }
         }
         &--new {

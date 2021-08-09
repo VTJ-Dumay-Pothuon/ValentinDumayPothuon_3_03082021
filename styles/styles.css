@@ -13,6 +13,11 @@ body h1, body h2 {
   margin-bottom: 0;
 }
 
+body a {
+  color: inherit;
+  text-decoration: none;
+}
+
 header picture {
   position: relative;
   display: block;
@@ -93,11 +98,11 @@ aside .fa-map-marker-alt::before {
   cursor: pointer;
 }
 
-.nav__btn:hover {
+.nav__btn:hover, .nav__btn:active {
   background-color: #f5edff;
 }
 
-.nav__btn:hover + .fas {
+.nav__btn:hover + .fas, .nav__btn:active + .fas {
   color: #9356dc;
 }
 
@@ -189,11 +194,11 @@ aside .fa-map-marker-alt::before {
   color: transparent;
 }
 
-.restos__indv .fas:hover {
+.restos__indv .fas:hover, .restos__indv .fas:active {
   opacity: 1;
 }
 
-.restos__indv .fas:hover + .far {
+.restos__indv .fas:hover + .far, .restos__indv .fas:active + .far {
   opacity: 0;
 }
 
