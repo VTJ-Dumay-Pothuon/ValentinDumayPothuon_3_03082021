@@ -1,16 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-
-%center {text-align: center;}
-
-@mixin block-shadow($color, $height: 3px){
-    box-shadow: 0px $height 5px $color;
-  }
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 $grey:      #353535;
 $light:     #f6f6f6;
 $primary:   #9356dc;
 $secondary: #ff79da;
 $tertiary:  #99e2d0;
+
+%center {text-align: center;}
+%default-padding {padding: 20px;}
+%light-bg {background-color: $light;}
+
+@mixin block-shadow($color, $height: 3px){
+    box-shadow: 0px $height 5px $color;
+  }
+
+@mixin heart ($offset: 0) {
+    position: absolute;
+    left: 300px;
+    margin-top: $offset;
+    font-size: 2em;
+}
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -25,6 +35,7 @@ body {
     }
 }
 
+/* shared header */
 header {
     picture {
         @extend %center;
@@ -39,6 +50,7 @@ header {
     }
 }
 
+/* Homepage specific classes */
 aside {
     @extend %center;
     background-color: #eaeaea;
@@ -57,7 +69,7 @@ aside {
 
 .welcome {
     @extend %center;
-    background-color: $light;
+    @extend %light-bg;
     padding: 50px;
     p {color: $grey;}
     h1 {margin-top: -15px;}
@@ -75,14 +87,10 @@ aside {
     }
 }
 
-.nav, .restos, footer {
-    padding: 20px;
-}
-
-/*The nav has a seemingly redundant .nav class to ease nesting*/
 .nav {
+    @extend %default-padding;
     &__btn {
-        background-color: $light;
+        @extend %light-bg;
         padding: 25px 50px;
         @include block-shadow(#ddd);
         border-radius: 16px/19px;
@@ -127,7 +135,8 @@ aside {
 }
 
 .restos {
-    background-color: $light;
+    @extend %default-padding;
+    @extend %light-bg;
     h1 {padding-bottom: 25px;}
     #resto-2 img {
         object-position: center 61%;
@@ -156,25 +165,7 @@ aside {
             padding-left: 12px;
         }
         .fa-heart {
-            position: absolute;
-            left: 300px;
-            margin-top: -20px;
-            font-size: 2em;
-        }
-        .fas {
-            z-index: 1;
-            opacity: 0;
-            background-color: $primary;
-            background: linear-gradient(200deg, $primary 0%, $secondary 100%);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            &:hover, &:active {
-                opacity: 1;
-                + .far {
-                    opacity: 0;
-                }
-            }
+            @include heart(-20px);
         }
         &--new {
 /*By default the label is available for each featured article, but is only displayed when required*/
@@ -195,7 +186,70 @@ aside {
     }
 }
 
+/* Shared heart react animation */
+.fas {
+    z-index: 1;
+    opacity: 0;
+    background-color: $primary;
+    background: linear-gradient(200deg, $primary 0%, $secondary 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    &:hover, &:active {
+        opacity: 1;
+        + .far {
+            opacity: 0;
+        }
+    }
+}
+
+/* Restaurant pages classes*/
+.headline {
+    display: flex;
+    height: 254px;
+    img {
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+.overlap-title {
+    @extend %default-padding;
+    @extend %light-bg;
+    position: relative;
+    top: -38px;
+    margin-bottom: -67px;
+    border-radius: 35px 35px/39px 39px 0 0;
+    h1 {
+        font-family: 'Shrikhand', cursive;
+        margin-top: 10px;
+    }
+    .fa-heart {
+        @include heart(-36px);
+    }
+}
+
+.appetizer, .meal, .dessert {
+    @extend %default-padding;
+    @extend %light-bg;
+    h1 {
+        font-weight: 300;
+        font-size: 1em;
+        text-transform: uppercase;
+        &:after {
+            content: "";
+            display: block;
+            width: 40px;
+            height: 3px;
+            margin-top: 3px;
+            background-color: $tertiary;
+        }
+    }
+}
+
+/* Shared footer */
 footer {
+    @extend %default-padding;
     background-color: $grey;
     img {
         filter: invert(1); /*white*/

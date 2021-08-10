@@ -1,6 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 header picture, aside, .welcome {
   text-align: center;
+}
+
+.nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
+  padding: 20px;
+}
+
+.welcome, .nav__btn, .restos, .overlap-title, .appetizer, .meal, .dessert {
+  background-color: #f6f6f6;
 }
 
 body {
@@ -18,6 +27,7 @@ body a {
   text-decoration: none;
 }
 
+/* shared header */
 header picture {
   position: relative;
   display: block;
@@ -31,6 +41,7 @@ header picture img {
   width: 165px;
 }
 
+/* Homepage specific classes */
 aside {
   background-color: #eaeaea;
   color: #353535;
@@ -49,7 +60,6 @@ aside .fa-map-marker-alt::before {
 }
 
 .welcome {
-  background-color: #f6f6f6;
   padding: 50px;
 }
 
@@ -75,13 +85,7 @@ aside .fa-map-marker-alt::before {
   cursor: pointer;
 }
 
-.nav, .restos, footer {
-  padding: 20px;
-}
-
-/*The nav has a seemingly redundant .nav class to ease nesting*/
 .nav__btn {
-  background-color: #f6f6f6;
   padding: 25px 50px;
   -webkit-box-shadow: 0px 3px 5px #ddd;
           box-shadow: 0px 3px 5px #ddd;
@@ -129,10 +133,6 @@ aside .fa-map-marker-alt::before {
   font-size: 0.9em;
   line-height: 25px;
   text-align: center;
-}
-
-.restos {
-  background-color: #f6f6f6;
 }
 
 .restos h1 {
@@ -184,24 +184,6 @@ aside .fa-map-marker-alt::before {
   font-size: 2em;
 }
 
-.restos__indv .fas {
-  z-index: 1;
-  opacity: 0;
-  background-color: #9356dc;
-  background: linear-gradient(200deg, #9356dc 0%, #ff79da 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.restos__indv .fas:hover, .restos__indv .fas:active {
-  opacity: 1;
-}
-
-.restos__indv .fas:hover + .far, .restos__indv .fas:active + .far {
-  opacity: 0;
-}
-
 .restos__indv--new {
   /*By default the label is available for each featured article, but is only displayed when required*/
   display: none;
@@ -220,6 +202,74 @@ aside .fa-map-marker-alt::before {
   display: block;
 }
 
+/* Shared heart react animation */
+.fas {
+  z-index: 1;
+  opacity: 0;
+  background-color: #9356dc;
+  background: linear-gradient(200deg, #9356dc 0%, #ff79da 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.fas:hover, .fas:active {
+  opacity: 1;
+}
+
+.fas:hover + .far, .fas:active + .far {
+  opacity: 0;
+}
+
+/* Restaurant pages classes*/
+.headline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 254px;
+}
+
+.headline img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.overlap-title {
+  position: relative;
+  top: -38px;
+  margin-bottom: -67px;
+  border-radius: 35px 35px/39px 39px 0 0;
+}
+
+.overlap-title h1 {
+  font-family: 'Shrikhand', cursive;
+  margin-top: 10px;
+}
+
+.overlap-title .fa-heart {
+  position: absolute;
+  left: 300px;
+  margin-top: -36px;
+  font-size: 2em;
+}
+
+.appetizer h1, .meal h1, .dessert h1 {
+  font-weight: 300;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.appetizer h1:after, .meal h1:after, .dessert h1:after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 3px;
+  background-color: #99e2d0;
+}
+
+/* Shared footer */
 footer {
   background-color: #353535;
 }
