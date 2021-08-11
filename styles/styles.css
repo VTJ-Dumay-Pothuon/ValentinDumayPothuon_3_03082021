@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-header picture, aside, .welcome {
+header picture, aside, .welcome, .order {
   text-align: center;
 }
 
@@ -8,8 +8,22 @@ header picture, aside, .welcome {
   padding: 20px;
 }
 
-.welcome, .nav__btn, .restos, .overlap-title, .appetizer, .meal, .dessert {
+.welcome, .nav__btn, .restos, .overlap-title, .appetizer, .meal, .dessert, .order {
   background-color: #f6f6f6;
+}
+
+.welcome__btn, .order__btn {
+  background-color: #9356dc;
+  background: linear-gradient(355deg, #9356dc 0%, #ff79da 100%);
+  -webkit-box-shadow: 0px 3px 5px #bbb;
+          box-shadow: 0px 3px 5px #bbb;
+  border-radius: 23px;
+  border: none;
+  width: 218px;
+  height: 50px;
+  font-size: 1.05em;
+  color: white;
+  cursor: pointer;
 }
 
 body {
@@ -69,20 +83,6 @@ aside .fa-map-marker-alt::before {
 
 .welcome h1 {
   margin-top: -15px;
-}
-
-.welcome__btn {
-  background-color: #9356dc;
-  background: linear-gradient(355deg, #9356dc 0%, #ff79da 100%);
-  -webkit-box-shadow: 0px 3px 5px #bbb;
-          box-shadow: 0px 3px 5px #bbb;
-  border-radius: 23px;
-  border: none;
-  width: 218px;
-  height: 50px;
-  font-size: 1.05em;
-  color: white;
-  cursor: pointer;
 }
 
 .nav__btn {
@@ -203,7 +203,7 @@ aside .fa-map-marker-alt::before {
 }
 
 /* Shared heart react animation */
-.fas {
+.fas.fa-heart {
   z-index: 1;
   opacity: 0;
   background-color: #9356dc;
@@ -211,13 +211,14 @@ aside .fa-map-marker-alt::before {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+  cursor: pointer;
 }
 
-.fas:hover, .fas:active {
+.fas.fa-heart:hover, .fas.fa-heart:active {
   opacity: 1;
 }
 
-.fas:hover + .far, .fas:active + .far {
+.fas.fa-heart:hover + .far.fa-heart, .fas.fa-heart:active + .far.fa-heart {
   opacity: 0;
 }
 
@@ -267,6 +268,40 @@ aside .fa-map-marker-alt::before {
   height: 3px;
   margin-top: 3px;
   background-color: #99e2d0;
+}
+
+.appetizer__indv, .meal__indv, .dessert__indv {
+  -webkit-box-shadow: 0px 10px 5px #eee;
+          box-shadow: 0px 10px 5px #eee;
+  padding: 0 10px;
+  border-radius: 12px;
+  background-color: white;
+  font-size: 0.8em;
+}
+
+.appetizer__indv .main-course, .meal__indv .main-course, .dessert__indv .main-course {
+  padding-top: 10px;
+  margin-bottom: -10px;
+  font-weight: 500;
+}
+
+.appetizer__indv .side, .meal__indv .side, .dessert__indv .side {
+  display: inline-block;
+}
+
+.appetizer__indv .price, .meal__indv .price, .dessert__indv .price {
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+  font-weight: 500;
+}
+
+.order {
+  height: 130px;
+}
+
+.order__btn {
+  margin-top: 25px;
 }
 
 /* Shared footer */

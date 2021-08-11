@@ -7,9 +7,6 @@ $primary:   #9356dc;
 $secondary: #ff79da;
 $tertiary:  #99e2d0;
 
-%center {text-align: center;}
-%default-padding {padding: 20px;}
-%light-bg {background-color: $light;}
 
 @mixin block-shadow($color, $height: 3px){
     box-shadow: 0px $height 5px $color;
@@ -21,6 +18,25 @@ $tertiary:  #99e2d0;
     margin-top: $offset;
     font-size: 2em;
 }
+
+
+%center {text-align: center;}
+%default-padding {padding: 20px;}
+%light-bg {background-color: $light;}
+
+%button {
+    background-color: $primary;
+    background: linear-gradient(355deg, $primary 0%, $secondary 100%);
+    @include block-shadow(#bbb);
+    border-radius: 23px;
+    border: none;
+    width: 218px;
+    height: 50px;
+    font-size: 1.05em;
+    color: white;
+    cursor: pointer;
+}
+
 
 body {
     font-family: 'Roboto', sans-serif;
@@ -74,16 +90,7 @@ aside {
     p {color: $grey;}
     h1 {margin-top: -15px;}
     &__btn {
-        background-color: $primary;
-        background: linear-gradient(355deg, $primary 0%, $secondary 100%);
-        @include block-shadow(#bbb);
-        border-radius: 23px;
-        border: none;
-        width: 218px;
-        height: 50px;
-        font-size: 1.05em;
-        color: white;
-        cursor: pointer;
+        @extend %button;
     }
 }
 
@@ -187,7 +194,7 @@ aside {
 }
 
 /* Shared heart react animation */
-.fas {
+.fas.fa-heart {
     z-index: 1;
     opacity: 0;
     background-color: $primary;
@@ -195,9 +202,10 @@ aside {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    cursor: pointer;
     &:hover, &:active {
         opacity: 1;
-        + .far {
+        + .far.fa-heart {
             opacity: 0;
         }
     }
@@ -244,6 +252,37 @@ aside {
             margin-top: 3px;
             background-color: $tertiary;
         }
+    }
+    &__indv {
+        @include block-shadow(#eee,10px);
+        padding: 0 10px;
+        border-radius: 12px;
+        background-color: white;
+        font-size: 0.8em;
+        .main-course {
+            padding-top:    10px;
+            margin-bottom: -10px;
+            font-weight: 500;
+        }
+        .side {
+            display: inline-block;
+        }
+        .price {
+            display: inline-block;
+            position: absolute;
+            right: 40px;
+            font-weight: 500
+        }
+    }
+}
+
+.order {
+    @extend %light-bg;
+    @extend %center;
+    height: 130px;
+    &__btn {
+        @extend %button;
+        margin-top: 25px;
     }
 }
 
