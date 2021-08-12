@@ -4,7 +4,7 @@ header picture, aside, .welcome, .order {
   text-align: center;
 }
 
-.nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
+header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
   padding: 20px;
 }
 
@@ -26,6 +26,7 @@ header picture, aside, .welcome, .order {
   cursor: pointer;
 }
 
+/* Non-specific settings */
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -41,7 +42,21 @@ body a {
   text-decoration: none;
 }
 
-/* shared header */
+body .in {
+  position: relative;
+  right: 4px;
+  margin-right: -4px;
+}
+
+/* Shared header */
+header a {
+  display: block;
+  font-size: 1.5em;
+  position: absolute;
+  color: #353535;
+  z-index: 1;
+}
+
 header picture {
   position: relative;
   display: block;
@@ -261,7 +276,7 @@ aside .fa-map-marker-alt::before {
   text-transform: uppercase;
 }
 
-.appetizer h1:after, .meal h1:after, .dessert h1:after {
+.appetizer h1::after, .meal h1::after, .dessert h1::after {
   content: "";
   display: block;
   width: 40px;
@@ -293,6 +308,7 @@ aside .fa-map-marker-alt::before {
   display: inline-block;
   position: absolute;
   right: 40px;
+  margin-top: 14px;
   font-weight: 500;
 }
 

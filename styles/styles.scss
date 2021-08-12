@@ -37,7 +37,7 @@ $tertiary:  #99e2d0;
     cursor: pointer;
 }
 
-
+/* Non-specific settings */
 body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
@@ -49,10 +49,23 @@ body {
         color: inherit;
         text-decoration: none;
     }
+    .in {
+        position: relative;
+        right: 4px;
+        margin-right: -4px;
+    }
 }
 
-/* shared header */
+/* Shared header */
 header {
+    a {
+        @extend %default-padding;
+        display: block;
+        font-size: 1.5em;
+        position: absolute;
+        color: $grey;
+        z-index: 1;
+    }
     picture {
         @extend %center;
         position: relative;
@@ -244,7 +257,7 @@ aside {
         font-weight: 300;
         font-size: 1em;
         text-transform: uppercase;
-        &:after {
+        &::after {
             content: "";
             display: block;
             width: 40px;
@@ -271,6 +284,7 @@ aside {
             display: inline-block;
             position: absolute;
             right: 40px;
+            margin-top: 14px;
             font-weight: 500
         }
     }
