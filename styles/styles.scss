@@ -7,7 +7,6 @@ $primary:   #9356dc;
 $secondary: #ff79da;
 $tertiary:  #99e2d0;
 
-
 @mixin block-shadow($color, $height: 3px){
     box-shadow: 0px $height 5px $color;
   }
@@ -36,6 +35,22 @@ $tertiary:  #99e2d0;
     color: white;
     cursor: pointer;
 }
+
+@keyframes check--onclick {
+    from {width: 0   ;}
+    30%  {width: 0   ;}
+    70%  {width: 59px;}
+    to   {width: 59px;}
+}
+
+@keyframes checkfas--rotate {
+    from {tranform: rotate(0)     ;}
+    30%  {tranform: rotate(0)     ;}
+    70%  {tranform: rotate(360deg);}
+    to   {tranform: rotate(360deg);}
+}
+  
+
 
 /* Non-specific settings */
 body {
@@ -286,6 +301,36 @@ aside {
             right: 40px;
             margin-top: 14px;
             font-weight: 500
+        }
+        .check {
+            display: flex;
+            position: absolute;
+            right: 20px;
+            margin-top: -65px;
+            height: 65px;
+            width: 0px;
+            animation: check--onclick 600ms infinite alternate both;
+            animation-play-state: paused;
+            border-radius: 0 12px 12px 0;
+            background-color: $tertiary;
+            align-items: center;
+            justify-content: center;
+            .fas {
+                font-size: 2em;
+                color: white;
+                overflow: hidden;
+                &::before {
+                    display: block;
+                    animation: checkfas--rotate 600ms infinite alternate both;
+                    animation-play-state: paused;
+                }
+            }
+        }
+        &:active .check {
+            animation-play-state: running;
+            .fas::before {
+                animation-play-state: running;
+            }
         }
     }
 }

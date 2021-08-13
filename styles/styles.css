@@ -26,6 +26,66 @@ header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
   cursor: pointer;
 }
 
+@-webkit-keyframes check--onclick {
+  from {
+    width: 0;
+  }
+  30% {
+    width: 0;
+  }
+  70% {
+    width: 59px;
+  }
+  to {
+    width: 59px;
+  }
+}
+
+@keyframes check--onclick {
+  from {
+    width: 0;
+  }
+  30% {
+    width: 0;
+  }
+  70% {
+    width: 59px;
+  }
+  to {
+    width: 59px;
+  }
+}
+
+@-webkit-keyframes checkfas--rotate {
+  from {
+    tranform: rotate(0);
+  }
+  30% {
+    tranform: rotate(0);
+  }
+  70% {
+    tranform: rotate(360deg);
+  }
+  to {
+    tranform: rotate(360deg);
+  }
+}
+
+@keyframes checkfas--rotate {
+  from {
+    tranform: rotate(0);
+  }
+  30% {
+    tranform: rotate(0);
+  }
+  70% {
+    tranform: rotate(360deg);
+  }
+  to {
+    tranform: rotate(360deg);
+  }
+}
+
 /* Non-specific settings */
 body {
   font-family: 'Roboto', sans-serif;
@@ -310,6 +370,53 @@ aside .fa-map-marker-alt::before {
   right: 40px;
   margin-top: 14px;
   font-weight: 500;
+}
+
+.appetizer__indv .check, .meal__indv .check, .dessert__indv .check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  right: 20px;
+  margin-top: -65px;
+  height: 65px;
+  width: 0px;
+  -webkit-animation: check--onclick 600ms infinite alternate both;
+          animation: check--onclick 600ms infinite alternate both;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  border-radius: 0 12px 12px 0;
+  background-color: #99e2d0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.appetizer__indv .check .fas, .meal__indv .check .fas, .dessert__indv .check .fas {
+  font-size: 2em;
+  color: white;
+  overflow: hidden;
+}
+
+.appetizer__indv .check .fas::before, .meal__indv .check .fas::before, .dessert__indv .check .fas::before {
+  display: block;
+  -webkit-animation: checkfas--rotate 600ms infinite alternate both;
+          animation: checkfas--rotate 600ms infinite alternate both;
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.appetizer__indv:active .check, .meal__indv:active .check, .dessert__indv:active .check {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+.appetizer__indv:active .check .fas::before, .meal__indv:active .check .fas::before, .dessert__indv:active .check .fas::before {
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
 }
 
 .order {
