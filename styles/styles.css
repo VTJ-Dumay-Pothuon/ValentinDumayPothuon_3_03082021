@@ -26,62 +26,66 @@ header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
   cursor: pointer;
 }
 
-@-webkit-keyframes check--onclick {
+@-webkit-keyframes check--on {
   from {
     width: 0;
-  }
-  30% {
-    width: 0;
-  }
-  70% {
-    width: 59px;
   }
   to {
     width: 59px;
   }
 }
 
-@keyframes check--onclick {
+@keyframes check--on {
   from {
     width: 0;
   }
-  30% {
-    width: 0;
+  to {
+    width: 59px;
   }
-  70% {
+}
+
+@-webkit-keyframes check--off {
+  from {
     width: 59px;
   }
   to {
+    width: 0;
+  }
+}
+
+@keyframes check--off {
+  from {
     width: 59px;
+  }
+  to {
+    width: 0;
   }
 }
 
 @-webkit-keyframes checkfas--rotate {
   from {
-    tranform: rotate(0);
-  }
-  30% {
-    tranform: rotate(0);
-  }
-  70% {
-    tranform: rotate(360deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
     tranform: rotate(360deg);
   }
 }
 
 @keyframes checkfas--rotate {
   from {
-    tranform: rotate(0);
-  }
-  30% {
-    tranform: rotate(0);
-  }
-  70% {
-    tranform: rotate(360deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
     tranform: rotate(360deg);
   }
 }
@@ -381,10 +385,6 @@ aside .fa-map-marker-alt::before {
   margin-top: -65px;
   height: 65px;
   width: 0px;
-  -webkit-animation: check--onclick 600ms infinite alternate both;
-          animation: check--onclick 600ms infinite alternate both;
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
   border-radius: 0 12px 12px 0;
   background-color: #99e2d0;
   -webkit-box-align: center;
@@ -396,27 +396,25 @@ aside .fa-map-marker-alt::before {
 }
 
 .appetizer__indv .check .fas, .meal__indv .check .fas, .dessert__indv .check .fas {
+  display: block;
   font-size: 2em;
   color: white;
   overflow: hidden;
 }
 
-.appetizer__indv .check .fas::before, .meal__indv .check .fas::before, .dessert__indv .check .fas::before {
-  display: block;
-  -webkit-animation: checkfas--rotate 600ms infinite alternate both;
-          animation: checkfas--rotate 600ms infinite alternate both;
-  -webkit-animation-play-state: paused;
-          animation-play-state: paused;
+.appetizer__indv:hover .check, .meal__indv:hover .check, .dessert__indv:hover .check {
+  -webkit-animation: check--on 500ms forwards;
+          animation: check--on 500ms forwards;
 }
 
-.appetizer__indv:active .check, .meal__indv:active .check, .dessert__indv:active .check {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
+.appetizer__indv:hover .check .fas, .meal__indv:hover .check .fas, .dessert__indv:hover .check .fas {
+  -webkit-animation: checkfas--rotate 500ms forwards;
+          animation: checkfas--rotate 500ms forwards;
 }
 
-.appetizer__indv:active .check .fas::before, .meal__indv:active .check .fas::before, .dessert__indv:active .check .fas::before {
-  -webkit-animation-play-state: running;
-          animation-play-state: running;
+.appetizer__indv:not(:hover) .check, .meal__indv:not(:hover) .check, .dessert__indv:not(:hover) .check {
+  -webkit-animation: check--off 500ms;
+          animation: check--off 500ms;
 }
 
 .order {

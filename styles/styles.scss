@@ -36,18 +36,31 @@ $tertiary:  #99e2d0;
     cursor: pointer;
 }
 
-@keyframes check--onclick {
+@keyframes check--on {
     from {width: 0   ;}
-    30%  {width: 0   ;}
-    70%  {width: 59px;}
     to   {width: 59px;}
 }
 
+@keyframes check--off {
+    from {width: 59px;}
+    to   {width: 0   ;}
+}
+
 @keyframes checkfas--rotate {
-    from {tranform: rotate(0)     ;}
-    30%  {tranform: rotate(0)     ;}
-    70%  {tranform: rotate(360deg);}
-    to   {tranform: rotate(360deg);}
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to   {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        tranform: rotate(360deg);
+    }
 }
   
 
@@ -309,28 +322,25 @@ aside {
             margin-top: -65px;
             height: 65px;
             width: 0px;
-            animation: check--onclick 600ms infinite alternate both;
-            animation-play-state: paused;
             border-radius: 0 12px 12px 0;
             background-color: $tertiary;
             align-items: center;
             justify-content: center;
             .fas {
+                display: block;
                 font-size: 2em;
                 color: white;
                 overflow: hidden;
-                &::before {
-                    display: block;
-                    animation: checkfas--rotate 600ms infinite alternate both;
-                    animation-play-state: paused;
-                }
             }
         }
-        &:active .check {
-            animation-play-state: running;
-            .fas::before {
-                animation-play-state: running;
+        &:hover .check {
+            animation: check--on 500ms forwards;
+            .fas {
+                animation: checkfas--rotate 500ms forwards;
             }
+        }
+        &:not(:hover) .check {
+            animation: check--off 500ms;
         }
     }
 }
