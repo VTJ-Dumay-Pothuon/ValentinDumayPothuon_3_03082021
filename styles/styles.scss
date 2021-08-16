@@ -322,6 +322,7 @@ aside {
             margin-top: -65px;
             height: 65px;
             width: 0px;
+            animation: check--off 500ms;
             border-radius: 0 12px 12px 0;
             background-color: $tertiary;
             align-items: center;
@@ -338,9 +339,6 @@ aside {
             .fas {
                 animation: checkfas--rotate 500ms forwards;
             }
-        }
-        &:not(:hover) .check {
-            animation: check--off 500ms;
         }
     }
 }

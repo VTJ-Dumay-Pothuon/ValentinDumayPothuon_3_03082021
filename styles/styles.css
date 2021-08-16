@@ -385,6 +385,8 @@ aside .fa-map-marker-alt::before {
   margin-top: -65px;
   height: 65px;
   width: 0px;
+  -webkit-animation: check--off 500ms;
+          animation: check--off 500ms;
   border-radius: 0 12px 12px 0;
   background-color: #99e2d0;
   -webkit-box-align: center;
@@ -410,11 +412,6 @@ aside .fa-map-marker-alt::before {
 .appetizer__indv:hover .check .fas, .meal__indv:hover .check .fas, .dessert__indv:hover .check .fas {
   -webkit-animation: checkfas--rotate 500ms forwards;
           animation: checkfas--rotate 500ms forwards;
-}
-
-.appetizer__indv:not(:hover) .check, .meal__indv:not(:hover) .check, .dessert__indv:not(:hover) .check {
-  -webkit-animation: check--off 500ms;
-          animation: check--off 500ms;
 }
 
 .order {
