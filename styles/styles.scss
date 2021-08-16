@@ -36,11 +36,22 @@ $tertiary:  #99e2d0;
     cursor: pointer;
 }
 
+@keyframes indv--appear {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    80% {opacity: 1;}
+    to {
+        opacity: 1;
+        transform: translateY(0) ;
+    }
+}
+
 @keyframes check--on {
     from {width: 0   ;}
     to   {width: 59px;}
 }
-
 @keyframes check--off {
     from {width: 59px;}
     to   {width: 0   ;}
@@ -67,7 +78,6 @@ $tertiary:  #99e2d0;
     from {transform: translateX(0)    ;}
     to   {transform: translateX(-60px);}
 }
-
 @keyframes price--unslide {
     from {transform: translateX(-60px);}
     to   {transform: translateX(0)    ;}
@@ -77,7 +87,6 @@ $tertiary:  #99e2d0;
     from {max-width: 350px;}
     to   {max-width: 250px;}
 }
-
 @keyframes title--long {
     from {max-width: 250px;}
     to   {max-width: 350px;}
@@ -87,7 +96,6 @@ $tertiary:  #99e2d0;
     from {max-width: 350px;}
     to   {max-width: 200px;}
 }
-
 @keyframes text--long {
     from {max-width:  200px;}
     to   {max-width:  350px;}
@@ -165,6 +173,7 @@ aside {
 
 .nav {
     @extend %default-padding;
+    animation: indv--appear 1s 500ms both;
     &__btn {
         @extend %light-bg;
         padding: 25px 50px;
@@ -213,6 +222,7 @@ aside {
 .restos {
     @extend %default-padding;
     @extend %light-bg;
+    animation: indv--appear 1s 1s both;
     h1 {padding-bottom: 25px;}
     #resto-2 img {
         object-position: center 61%;
@@ -322,6 +332,12 @@ aside {
             background-color: $tertiary;
         }
     }
+    
+    @for $i from 2 through 5 {
+        &__indv:nth-child(#{$i}) {
+            animation: indv--appear 1s 500ms + $i*100ms both;
+        }
+    }
     &__indv {
         @include block-shadow(#eee,10px);
         padding: 0 10px;
@@ -346,7 +362,7 @@ aside {
         .price {
             display: inline-block;
             position: absolute;
-            right: 40px;
+            right: 20px;
             animation: price--unslide 500ms;
             margin-top: 14px;
             font-weight: 500
@@ -354,7 +370,7 @@ aside {
         .check {
             display: flex;
             position: absolute;
-            right: 20px;
+            right: 0px;
             margin-top: -68px;
             height: 68px;
             width: 0px;

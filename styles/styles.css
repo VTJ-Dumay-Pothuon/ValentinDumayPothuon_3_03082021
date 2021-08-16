@@ -26,6 +26,38 @@ header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
   cursor: pointer;
 }
 
+@-webkit-keyframes indv--appear {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes indv--appear {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  80% {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
 @-webkit-keyframes check--on {
   from {
     width: 0;
@@ -280,6 +312,11 @@ aside .fa-map-marker-alt::before {
   margin-top: -15px;
 }
 
+.nav {
+  -webkit-animation: indv--appear 1s 500ms both;
+          animation: indv--appear 1s 500ms both;
+}
+
 .nav__btn {
   padding: 25px 50px;
   -webkit-box-shadow: 0px 3px 5px #ddd;
@@ -328,6 +365,11 @@ aside .fa-map-marker-alt::before {
   font-size: 0.9em;
   line-height: 25px;
   text-align: center;
+}
+
+.restos {
+  -webkit-animation: indv--appear 1s 1s both;
+          animation: indv--appear 1s 1s both;
 }
 
 .restos h1 {
@@ -465,6 +507,26 @@ aside .fa-map-marker-alt::before {
   background-color: #99e2d0;
 }
 
+.appetizer__indv:nth-child(2), .meal__indv:nth-child(2), .dessert__indv:nth-child(2) {
+  -webkit-animation: indv--appear 1s 700ms both;
+          animation: indv--appear 1s 700ms both;
+}
+
+.appetizer__indv:nth-child(3), .meal__indv:nth-child(3), .dessert__indv:nth-child(3) {
+  -webkit-animation: indv--appear 1s 800ms both;
+          animation: indv--appear 1s 800ms both;
+}
+
+.appetizer__indv:nth-child(4), .meal__indv:nth-child(4), .dessert__indv:nth-child(4) {
+  -webkit-animation: indv--appear 1s 900ms both;
+          animation: indv--appear 1s 900ms both;
+}
+
+.appetizer__indv:nth-child(5), .meal__indv:nth-child(5), .dessert__indv:nth-child(5) {
+  -webkit-animation: indv--appear 1s 1000ms both;
+          animation: indv--appear 1s 1000ms both;
+}
+
 .appetizer__indv, .meal__indv, .dessert__indv {
   -webkit-box-shadow: 0px 10px 5px #eee;
           box-shadow: 0px 10px 5px #eee;
@@ -503,7 +565,7 @@ aside .fa-map-marker-alt::before {
 .appetizer__indv .price, .meal__indv .price, .dessert__indv .price {
   display: inline-block;
   position: absolute;
-  right: 40px;
+  right: 20px;
   -webkit-animation: price--unslide 500ms;
           animation: price--unslide 500ms;
   margin-top: 14px;
@@ -515,7 +577,7 @@ aside .fa-map-marker-alt::before {
   display: -ms-flexbox;
   display: flex;
   position: absolute;
-  right: 20px;
+  right: 0px;
   margin-top: -68px;
   height: 68px;
   width: 0px;
