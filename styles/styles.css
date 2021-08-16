@@ -90,6 +90,122 @@ header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
   }
 }
 
+@-webkit-keyframes price--slide {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-60px);
+            transform: translateX(-60px);
+  }
+}
+
+@keyframes price--slide {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-60px);
+            transform: translateX(-60px);
+  }
+}
+
+@-webkit-keyframes price--unslide {
+  from {
+    -webkit-transform: translateX(-60px);
+            transform: translateX(-60px);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes price--unslide {
+  from {
+    -webkit-transform: translateX(-60px);
+            transform: translateX(-60px);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes title--short {
+  from {
+    max-width: 350px;
+  }
+  to {
+    max-width: 250px;
+  }
+}
+
+@keyframes title--short {
+  from {
+    max-width: 350px;
+  }
+  to {
+    max-width: 250px;
+  }
+}
+
+@-webkit-keyframes title--long {
+  from {
+    max-width: 250px;
+  }
+  to {
+    max-width: 350px;
+  }
+}
+
+@keyframes title--long {
+  from {
+    max-width: 250px;
+  }
+  to {
+    max-width: 350px;
+  }
+}
+
+@-webkit-keyframes text--short {
+  from {
+    max-width: 350px;
+  }
+  to {
+    max-width: 200px;
+  }
+}
+
+@keyframes text--short {
+  from {
+    max-width: 350px;
+  }
+  to {
+    max-width: 200px;
+  }
+}
+
+@-webkit-keyframes text--long {
+  from {
+    max-width: 200px;
+  }
+  to {
+    max-width: 350px;
+  }
+}
+
+@keyframes text--long {
+  from {
+    max-width: 200px;
+  }
+  to {
+    max-width: 350px;
+  }
+}
+
 /* Non-specific settings */
 body {
   font-family: 'Roboto', sans-serif;
@@ -358,6 +474,22 @@ aside .fa-map-marker-alt::before {
   font-size: 0.8em;
 }
 
+.appetizer__indv h2, .appetizer__indv p, .meal__indv h2, .meal__indv p, .dessert__indv h2, .dessert__indv p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.appetizer__indv h2, .meal__indv h2, .dessert__indv h2 {
+  -webkit-animation: title--long 1s;
+          animation: title--long 1s;
+}
+
+.appetizer__indv p, .meal__indv p, .dessert__indv p {
+  -webkit-animation: text--long 1s;
+          animation: text--long 1s;
+}
+
 .appetizer__indv .main-course, .meal__indv .main-course, .dessert__indv .main-course {
   padding-top: 10px;
   margin-bottom: -10px;
@@ -372,6 +504,8 @@ aside .fa-map-marker-alt::before {
   display: inline-block;
   position: absolute;
   right: 40px;
+  -webkit-animation: price--unslide 500ms;
+          animation: price--unslide 500ms;
   margin-top: 14px;
   font-weight: 500;
 }
@@ -382,8 +516,8 @@ aside .fa-map-marker-alt::before {
   display: flex;
   position: absolute;
   right: 20px;
-  margin-top: -65px;
-  height: 65px;
+  margin-top: -68px;
+  height: 68px;
   width: 0px;
   -webkit-animation: check--off 500ms;
           animation: check--off 500ms;
@@ -404,6 +538,16 @@ aside .fa-map-marker-alt::before {
   overflow: hidden;
 }
 
+.appetizer__indv:hover h2, .meal__indv:hover h2, .dessert__indv:hover h2 {
+  -webkit-animation: title--short 500ms forwards;
+          animation: title--short 500ms forwards;
+}
+
+.appetizer__indv:hover p, .meal__indv:hover p, .dessert__indv:hover p {
+  -webkit-animation: text--short 500ms forwards;
+          animation: text--short 500ms forwards;
+}
+
 .appetizer__indv:hover .check, .meal__indv:hover .check, .dessert__indv:hover .check {
   -webkit-animation: check--on 500ms forwards;
           animation: check--on 500ms forwards;
@@ -412,6 +556,11 @@ aside .fa-map-marker-alt::before {
 .appetizer__indv:hover .check .fas, .meal__indv:hover .check .fas, .dessert__indv:hover .check .fas {
   -webkit-animation: checkfas--rotate 500ms forwards;
           animation: checkfas--rotate 500ms forwards;
+}
+
+.appetizer__indv:hover .price, .meal__indv:hover .price, .dessert__indv:hover .price {
+  -webkit-animation: price--slide 500ms forwards;
+          animation: price--slide 500ms forwards;
 }
 
 .order {

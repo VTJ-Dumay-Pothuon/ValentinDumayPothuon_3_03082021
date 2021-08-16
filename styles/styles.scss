@@ -62,8 +62,36 @@ $tertiary:  #99e2d0;
         tranform: rotate(360deg);
     }
 }
-  
 
+@keyframes price--slide {
+    from {transform: translateX(0)    ;}
+    to   {transform: translateX(-60px);}
+}
+
+@keyframes price--unslide {
+    from {transform: translateX(-60px);}
+    to   {transform: translateX(0)    ;}
+}
+  
+@keyframes title--short {
+    from {max-width: 350px;}
+    to   {max-width: 250px;}
+}
+
+@keyframes title--long {
+    from {max-width: 250px;}
+    to   {max-width: 350px;}
+}
+
+@keyframes text--short {
+    from {max-width: 350px;}
+    to   {max-width: 200px;}
+}
+
+@keyframes text--long {
+    from {max-width:  200px;}
+    to   {max-width:  350px;}
+}
 
 /* Non-specific settings */
 body {
@@ -300,6 +328,13 @@ aside {
         border-radius: 12px;
         background-color: white;
         font-size: 0.8em;
+        h2, p {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        h2 {animation: title--long 1s;}
+        p  {animation:  text--long 1s;}
         .main-course {
             padding-top:    10px;
             margin-bottom: -10px;
@@ -312,6 +347,7 @@ aside {
             display: inline-block;
             position: absolute;
             right: 40px;
+            animation: price--unslide 500ms;
             margin-top: 14px;
             font-weight: 500
         }
@@ -319,8 +355,8 @@ aside {
             display: flex;
             position: absolute;
             right: 20px;
-            margin-top: -65px;
-            height: 65px;
+            margin-top: -68px;
+            height: 68px;
             width: 0px;
             animation: check--off 500ms;
             border-radius: 0 12px 12px 0;
@@ -334,10 +370,17 @@ aside {
                 overflow: hidden;
             }
         }
-        &:hover .check {
+        &:hover {
+            h2 {animation: title--short 500ms forwards;}
+            p  {animation:  text--short 500ms forwards;}
+            .check {
             animation: check--on 500ms forwards;
-            .fas {
-                animation: checkfas--rotate 500ms forwards;
+                .fas {
+                    animation: checkfas--rotate 500ms forwards;
+                }
+            }
+            .price {
+                animation: price--slide 500ms forwards;
             }
         }
     }
