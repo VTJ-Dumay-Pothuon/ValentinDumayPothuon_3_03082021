@@ -46,6 +46,46 @@ header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
     -webkit-transform: translateY(0);
             transform: translateY(0); } }
 
+@-webkit-keyframes new--appear {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
+  75% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  90% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
+@keyframes new--appear {
+  from {
+    opacity: 0;
+    -webkit-transform: scale(0);
+            transform: scale(0); }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
+  75% {
+    -webkit-transform: scale(1);
+            transform: scale(1); }
+  90% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2); }
+  to {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1); } }
+
 @-webkit-keyframes check--on {
   from {
     width: 0; }
@@ -172,6 +212,42 @@ header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
   to {
     max-width: 350px; } }
 
+@-webkit-keyframes loader--display {
+  0%, 99% {
+    height: 2.5em;
+    margin: 200px auto 9999px auto;
+    display: block; }
+  100% {
+    height: 0;
+    margin: 0;
+    display: none; } }
+
+@keyframes loader--display {
+  0%, 99% {
+    height: 2.5em;
+    margin: 200px auto 9999px auto;
+    display: block; }
+  100% {
+    height: 0;
+    margin: 0;
+    display: none; } }
+
+@-webkit-keyframes loader--load {
+  0%, 30%, 60%, 90% {
+    -webkit-box-shadow: 0 3.5em 0 -1.2em;
+            box-shadow: 0 3.5em 0 -1.2em; }
+  45%, 75% {
+    -webkit-box-shadow: 0 3.5em 0 0;
+            box-shadow: 0 3.5em 0 0; } }
+
+@keyframes loader--load {
+  0%, 30%, 60%, 90% {
+    -webkit-box-shadow: 0 3.5em 0 -1.2em;
+            box-shadow: 0 3.5em 0 -1.2em; }
+  45%, 75% {
+    -webkit-box-shadow: 0 3.5em 0 0;
+            box-shadow: 0 3.5em 0 0; } }
+
 /* Non-specific settings */
 body {
   font-family: 'Roboto', sans-serif;
@@ -188,6 +264,30 @@ body {
     position: relative;
     right: 4px;
     margin-right: -4px; }
+
+.loader, .loader:before, .loader:after {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em; }
+
+.loader {
+  -webkit-animation: loader--display 3s both, loader--load 3s -200ms both;
+          animation: loader--display 3s both, loader--load 3s -200ms both;
+  color: #000000;
+  font-size: 10px;
+  position: relative; }
+  .loader:before, .loader:after {
+    -webkit-animation: loader--load 3s both;
+            animation: loader--load 3s both;
+    content: '';
+    position: absolute;
+    top: 0; }
+  .loader:before {
+    left: -4.2em;
+    -webkit-animation-delay: -350ms;
+            animation-delay: -350ms; }
+  .loader:after {
+    left: 4.2em; }
 
 /* Shared header */
 header {
@@ -230,9 +330,11 @@ aside {
 
 .nav {
   background-color: white;
-  -webkit-animation: indv--appear 1s 500ms both;
-          animation: indv--appear 1s 500ms both; }
+  -webkit-animation: indv--appear 1s 3500ms both;
+          animation: indv--appear 1s 3500ms both; }
   .nav__btn {
+    -webkit-transition: background-color 200ms;
+    transition: background-color 200ms;
     padding: 25px 50px;
     -webkit-box-shadow: 0px 3px 5px #ddd;
             box-shadow: 0px 3px 5px #ddd;
@@ -257,6 +359,8 @@ aside {
     left: 44px;
     bottom: 56px;
     color: #7e7e7e;
+    -webkit-transition: color 200ms;
+    transition: color 200ms;
     font-size: 1.1em; }
   .nav__digit {
     display: inline-block;
@@ -273,63 +377,64 @@ aside {
     line-height: 25px;
     text-align: center; }
 
-.restos {
-  -webkit-animation: indv--appear 1s 1s both;
-          animation: indv--appear 1s 1s both; }
-  .restos h1 {
-    padding-bottom: 25px; }
-  .restos #resto-2 img {
-    -o-object-position: center 61%;
-       object-position: center 61%; }
-  .restos__indv {
-    border-radius: 12px;
-    -webkit-box-shadow: 0px 5px 5px #ddd;
-            box-shadow: 0px 5px 5px #ddd;
-    width: -moz-available;
-    /* For Firefox */
-    width: -webkit-fill-available;
-    /* For Chrome */
-    width: stretch;
-    cursor: pointer; }
-    .restos__indv img {
-      border-radius: 12px 12px 0 0;
-      width: 100%;
-      height: 174px;
-      -o-object-fit: cover;
-         object-fit: cover;
-      -o-object-position: center 100%;
-         object-position: center 100%; }
-    .restos__indv p {
-      padding-left: 12px;
-      padding-bottom: 12px;
-      margin-top: 0; }
-    .restos__indv h2 {
-      font-size: 1.2em;
-      padding-left: 12px; }
-    .restos__indv .fa-heart {
-      position: absolute;
-      left: 300px;
-      margin-top: -20px;
-      font-size: 2em; }
-    .restos__indv--new {
-      /*By default the label is available for each featured article, but is only displayed when required*/
-      display: none;
-      position: absolute;
-      right: 42px;
-      margin-top: -160px;
-      padding: 5px 10px;
-      border-radius: 2px;
-      background-color: #99e2d0;
-      color: #008766;
-      font-weight: 500;
-      font-size: 0.8em; }
-      .restos__indv--new#new-1, .restos__indv--new#new-2 {
-        display: block; }
+.restos h1 {
+  padding-bottom: 25px; }
+
+.restos #resto-2 img {
+  -o-object-position: center 61%;
+     object-position: center 61%; }
+
+.restos__indv {
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 5px 5px #ddd;
+          box-shadow: 0px 5px 5px #ddd;
+  width: -moz-available;
+  /* For Firefox */
+  width: -webkit-fill-available;
+  /* For Chrome */
+  width: stretch;
+  cursor: pointer; }
+  .restos__indv img {
+    border-radius: 12px 12px 0 0;
+    width: 100%;
+    height: 174px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center 100%;
+       object-position: center 100%; }
+  .restos__indv p {
+    padding-left: 12px;
+    padding-bottom: 12px;
+    margin-top: 0; }
+  .restos__indv h2 {
+    font-size: 1.2em;
+    padding-left: 12px; }
+  .restos__indv .fa-heart {
+    position: absolute;
+    left: 300px;
+    margin-top: -20px;
+    font-size: 2em; }
+  .restos__indv--new {
+    /*By default the label is available for each featured article, but is only displayed when required*/
+    opacity: 0;
+    position: absolute;
+    right: 42px;
+    margin-top: -160px;
+    padding: 5px 10px;
+    border-radius: 2px;
+    background-color: #99e2d0;
+    color: #008766;
+    font-weight: 500;
+    font-size: 0.8em; }
+    .restos__indv--new#new-1, .restos__indv--new#new-2 {
+      opacity: 1; }
 
 /* Shared heart react animation */
 .fas.fa-heart {
   z-index: 1;
   opacity: 0;
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms;
   background-color: #9356dc;
   background: linear-gradient(200deg, #9356dc 0%, #ff79da 100%);
   background-clip: text;
@@ -340,6 +445,10 @@ aside {
     opacity: 1; }
     .fas.fa-heart:hover + .far.fa-heart, .fas.fa-heart:active + .far.fa-heart {
       opacity: 0; }
+
+.far.fa-heart {
+  -webkit-transition: opacity 300ms;
+  transition: opacity 300ms; }
 
 /* Restaurant pages classes*/
 .headline {
@@ -449,19 +558,19 @@ aside {
       font-size: 2em;
       color: white;
       overflow: hidden; }
-  .appetizer__indv:hover h2, .meal__indv:hover h2, .dessert__indv:hover h2 {
+  .appetizer__indv:hover h2, .appetizer__indv:active h2, .meal__indv:hover h2, .meal__indv:active h2, .dessert__indv:hover h2, .dessert__indv:active h2 {
     -webkit-animation: title--short 500ms forwards;
             animation: title--short 500ms forwards; }
-  .appetizer__indv:hover p, .meal__indv:hover p, .dessert__indv:hover p {
+  .appetizer__indv:hover p, .appetizer__indv:active p, .meal__indv:hover p, .meal__indv:active p, .dessert__indv:hover p, .dessert__indv:active p {
     -webkit-animation: text--short 500ms forwards;
             animation: text--short 500ms forwards; }
-  .appetizer__indv:hover .check, .meal__indv:hover .check, .dessert__indv:hover .check {
+  .appetizer__indv:hover .check, .appetizer__indv:active .check, .meal__indv:hover .check, .meal__indv:active .check, .dessert__indv:hover .check, .dessert__indv:active .check {
     -webkit-animation: check--on 500ms forwards;
             animation: check--on 500ms forwards; }
-    .appetizer__indv:hover .check .fas, .meal__indv:hover .check .fas, .dessert__indv:hover .check .fas {
+    .appetizer__indv:hover .check .fas, .appetizer__indv:active .check .fas, .meal__indv:hover .check .fas, .meal__indv:active .check .fas, .dessert__indv:hover .check .fas, .dessert__indv:active .check .fas {
       -webkit-animation: checkfas--rotate 500ms forwards;
               animation: checkfas--rotate 500ms forwards; }
-  .appetizer__indv:hover .price, .meal__indv:hover .price, .dessert__indv:hover .price {
+  .appetizer__indv:hover .price, .appetizer__indv:active .price, .meal__indv:hover .price, .meal__indv:active .price, .dessert__indv:hover .price, .dessert__indv:active .price {
     -webkit-animation: price--slide 500ms forwards;
             animation: price--slide 500ms forwards; }
 
@@ -498,12 +607,18 @@ footer {
   body {
     background-color: grey;
     background: linear-gradient(25deg, #cfcfcf 0%, #909090 20%, #cfcfcf 40%, #909090 60%, #cfcfcf 80%, #909090 100%); }
+  .loader {
+    display: none;
+    -webkit-animation: none;
+            animation: none; }
   aside {
     float: right;
     position: relative;
     width: 200px;
     bottom: 58px;
     height: 58px; }
+    aside p {
+      padding-top: 20px; }
   .welcome {
     text-align: left; }
     .welcome h1 {
@@ -566,12 +681,18 @@ footer {
       padding-left: 35px; }
     .restos__indv {
       margin: 0 50px; }
+      .restos__indv img {
+        height: 230px; }
       .restos__indv p {
         width: 95%; }
       .restos__indv--new {
         right: unset;
         margin-left: 10px;
+        margin-top: -220px;
         font-size: 1.1em; }
+        .restos__indv--new#new-1, .restos__indv--new#new-2 {
+          -webkit-animation: new--appear 500ms 1s both;
+                  animation: new--appear 500ms 1s both; }
     .restos :nth-child(even) .fa-heart {
       position: -webkit-sticky;
       position: sticky;
@@ -591,10 +712,12 @@ footer {
     .appetizer__indv p, .meal__indv p, .dessert__indv p {
       -webkit-animation: none;
               animation: none; }
-    .appetizer__indv:hover h2, .meal__indv:hover h2, .dessert__indv:hover h2 {
+    .appetizer__indv data, .meal__indv data, .dessert__indv data {
+      font-size: 1.5em; }
+    .appetizer__indv:hover h2, .appetizer__indv:active h2, .meal__indv:hover h2, .meal__indv:active h2, .dessert__indv:hover h2, .dessert__indv:active h2 {
       -webkit-animation: none;
               animation: none; }
-    .appetizer__indv:hover p, .meal__indv:hover p, .dessert__indv:hover p {
+    .appetizer__indv:hover p, .appetizer__indv:active p, .meal__indv:hover p, .meal__indv:active p, .dessert__indv:hover p, .dessert__indv:active p {
       -webkit-animation: none;
               animation: none; } }
 
