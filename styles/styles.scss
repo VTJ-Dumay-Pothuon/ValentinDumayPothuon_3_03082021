@@ -106,6 +106,8 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
     margin: auto;
+    max-width: 1300px;
+    background-color: white;
     h1, h2 {
         margin-bottom: 0;
     }
@@ -122,6 +124,7 @@ body {
 
 /* Shared header */
 header {
+    background-color: white;
     a {
         @extend %default-padding;
         display: block;
@@ -173,6 +176,7 @@ aside {
 
 .nav {
     @extend %default-padding;
+    background-color: white;
     animation: indv--appear 1s 500ms both;
     &__btn {
         @extend %light-bg;
@@ -435,5 +439,114 @@ footer {
         display: block;
         margin: 5px 0;
         text-decoration: none;
+    }
+}
+
+/* Web adaptation of the app*/
+@media screen and (min-width: 900px) {
+    body {
+        background-color: grey;
+        background: linear-gradient(25deg, rgba(207,207,207,1) 0%, rgba(144,144,144,1) 20%, rgba(207,207,207,1) 40%, rgba(144,144,144,1) 60%, rgba(207,207,207,1) 80%, rgba(144,144,144,1) 100%);
+    }
+
+    aside {
+        float: right;
+        position: relative;
+        width: 200px;
+        bottom: 58px;
+        height: 58px;
+    }
+
+    .welcome {
+        text-align: left;
+        h1 {
+            padding-top: 70px;
+        }
+        &__btn {
+            margin-left: 80px;
+        }
+    }
+    
+    .nav, .restos {animation: none;}
+
+    .nav {
+        float: right;
+        position: absolute;
+        top: 50px;
+        width: 30%;
+        margin-left: 600px;
+        background-color: revert;
+        @for $i from 2 through 10 {
+            :nth-child(#{$i}) {
+                animation: indv--appear 1s 800ms + ($i/3)*100ms both;
+            }
+        }
+        &__btn {
+            background-color: white;
+            margin-bottom: -20px;
+            font-size: 1.2em;
+        }
+        &__digit, .fas {
+            bottom: 28px;
+        }
+    }
+
+    .restos {
+        display: grid;
+             -ms-grid-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2,1fr);
+        grid-gap: 30px 0;
+        h1 {
+            grid-column: 1 / span 2;
+            padding-left: 35px;
+        }
+        &__indv {
+            margin: 0 50px;
+            p {
+                width: 95%;
+            }
+            &--new {
+                right: unset;
+                margin-left: 10px;
+                font-size: 1.1em;
+            }
+        }
+        :nth-child(even) .fa-heart {
+            position: sticky;
+            left: 50%;
+        }
+        :nth-child(odd) .fa-heart {
+            left: 100%;
+        }
+    }
+
+    .headline {height: 300px;}
+
+    .overlap-title h1 {
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .appetizer, .meal, .dessert {
+        padding: 20px 20%;
+        &__indv {
+            h2 {animation: none;}
+            p  {animation:  none;}
+            &:hover {
+                h2 {animation: none;}
+                p  {animation:  none;}
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1005px) {
+    .nav {
+        width: 40%;
+        margin-left: 512px;
+    }
+
+    .restos__indv p {
+        width: 90%;
     }
 }
