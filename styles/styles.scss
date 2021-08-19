@@ -559,7 +559,7 @@ footer {
         top: 50px;
         width: 30%;
         margin-left: 600px;
-        background-color: revert;
+        background-color: transparent;
         @for $i from 2 through 10 {
         :nth-child(#{$i}) {animation: indv--appear 1s 800ms + ($i/3)*100ms both;}
         }

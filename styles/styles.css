@@ -649,7 +649,7 @@ footer {
     top: 50px;
     width: 30%;
     margin-left: 600px;
-    background-color: revert; }
+    background-color: transparent; }
     .nav :nth-child(2) {
       -webkit-animation: indv--appear 1s 866.66667ms both;
               animation: indv--appear 1s 866.66667ms both; }
