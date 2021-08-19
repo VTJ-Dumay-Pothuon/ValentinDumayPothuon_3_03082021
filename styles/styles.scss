@@ -339,6 +339,18 @@ aside {
     }
 }
 
+/* Microsoft Edge Styling */ 
+@supports (width:-webkit-fill-available) { 
+    .restos__indv {
+        &--new {
+            position: relative;
+            bottom: 166px;
+            left: 10px;
+        }
+        h2 {margin-top: -10px;}
+    }
+}  
+
 /* Shared heart react animation */
 .fas.fa-heart {
     z-index: 1;
@@ -512,7 +524,6 @@ footer {
     .restos__indv--new {right: 10%;}
 }
 
-
 /* Web adaptation of the app*/
 @media screen and (min-width: 900px) {
     body {
@@ -611,6 +622,15 @@ footer {
             }
         }
     }
+
+    /* Microsoft Edge Styling */ 
+    @supports (width:-webkit-fill-available) { 
+        .restos__indv--new {
+            position: relative;
+            bottom: 218px;
+            left: 0;
+        }
+    } 
 }
 
 @media screen and (min-width: 900px) and (max-width: 1005px) {

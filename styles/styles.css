@@ -429,6 +429,15 @@ aside {
     .restos__indv--new#new-1, .restos__indv--new#new-2 {
       opacity: 1; }
 
+/* Microsoft Edge Styling */
+@supports (width: -webkit-fill-available) {
+  .restos__indv--new {
+    position: relative;
+    bottom: 166px;
+    left: 10px; }
+  .restos__indv h2 {
+    margin-top: -10px; } }
+
 /* Shared heart react animation */
 .fas.fa-heart {
   z-index: 1;
@@ -725,7 +734,13 @@ footer {
               animation: none; }
     .appetizer__indv:hover p, .appetizer__indv:active p, .meal__indv:hover p, .meal__indv:active p, .dessert__indv:hover p, .dessert__indv:active p {
       -webkit-animation: none;
-              animation: none; } }
+              animation: none; }
+  /* Microsoft Edge Styling */
+  @supports (width: -webkit-fill-available) {
+    .restos__indv--new {
+      position: relative;
+      bottom: 218px;
+      left: 0; } } }
 
 @media screen and (min-width: 900px) and (max-width: 1005px) {
   .nav {
