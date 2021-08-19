@@ -213,7 +213,7 @@ header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
     max-width: 350px; } }
 
 @-webkit-keyframes loader--display {
-  0%, 95% {
+  0%, 90% {
     height: 2.5em;
     margin: 200px auto 9999px auto;
     display: block; }
@@ -223,7 +223,7 @@ header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
     display: none; } }
 
 @keyframes loader--display {
-  0%, 95% {
+  0%, 90% {
     height: 2.5em;
     margin: 200px auto 9999px auto;
     display: block; }
@@ -429,12 +429,12 @@ aside {
     .restos__indv--new#new-1, .restos__indv--new#new-2 {
       opacity: 1; }
 
-/* Microsoft Edge Styling */
+/* Chromium engine styling */
 @supports (width: -webkit-fill-available) {
   .restos__indv--new {
     position: relative;
     bottom: 166px;
-    left: 10px; }
+    left: 75%; }
   .restos__indv h2 {
     margin-top: -10px; } }
 
@@ -735,7 +735,7 @@ footer {
     .appetizer__indv:hover p, .appetizer__indv:active p, .meal__indv:hover p, .meal__indv:active p, .dessert__indv:hover p, .dessert__indv:active p {
       -webkit-animation: none;
               animation: none; }
-  /* Microsoft Edge Styling */
+  /* Chromium engine styling */
   @supports (width: -webkit-fill-available) {
     .restos__indv--new {
       position: relative;
@@ -748,4 +748,19 @@ footer {
     margin-left: 512px; }
   .restos__indv p {
     width: 90%; } }
+
+/* Chromium engine styling */
+@supports (width: -webkit-fill-available) {
+  @media screen and (max-width: 420px) {
+    .restos__indv--new {
+      left: 1%; } }
+  @media screen and (min-width: 420px) and (max-width: 500px) {
+    .restos__indv--new {
+      left: 80%; } }
+  @media screen and (min-width: 500px) and (max-width: 750px) {
+    .restos__indv--new {
+      left: 84%; } }
+  @media screen and (min-width: 750px) and (max-width: 900px) {
+    .restos__indv--new {
+      left: 88%; } } }
 /*# sourceMappingURL=styles.css.map */

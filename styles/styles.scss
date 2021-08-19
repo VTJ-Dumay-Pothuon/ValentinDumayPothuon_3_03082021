@@ -119,7 +119,7 @@ $tertiary:  #99e2d0;
 }
 
 @keyframes loader--display {
-    0%, 95% {
+    0%, 90% {
         height: 2.5em;
         margin: 200px auto 9999px auto;
         display: block;
@@ -339,13 +339,13 @@ aside {
     }
 }
 
-/* Microsoft Edge Styling */ 
+/* Chromium engine styling */ 
 @supports (width:-webkit-fill-available) { 
     .restos__indv {
         &--new {
             position: relative;
             bottom: 166px;
-            left: 10px;
+            left: 75%;
         }
         h2 {margin-top: -10px;}
     }
@@ -623,7 +623,7 @@ footer {
         }
     }
 
-    /* Microsoft Edge Styling */ 
+    /* Chromium engine styling */ 
     @supports (width:-webkit-fill-available) { 
         .restos__indv--new {
             position: relative;
@@ -634,12 +634,18 @@ footer {
 }
 
 @media screen and (min-width: 900px) and (max-width: 1005px) {
-    .nav {
-        width: 40%;
-        margin-left: 512px;
-    }
+    .nav {width: 40%; margin-left: 512px;}
+    .restos__indv p {width: 90%;}
+}
 
-    .restos__indv p {
-        width: 90%;
-    }
+/* Chromium engine styling */ 
+@supports (width:-webkit-fill-available) { 
+    @media screen and (max-width: 420px)
+    {.restos__indv--new {left: 1%;}}
+    @media screen and (min-width: 420px) and (max-width: 500px)
+    {.restos__indv--new {left: 80%;}}
+    @media screen and (min-width: 500px) and (max-width: 750px)
+    {.restos__indv--new {left: 84%;}}
+    @media screen and (min-width: 750px) and (max-width: 900px)
+    {.restos__indv--new {left: 88%;}}
 }
