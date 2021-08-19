@@ -213,7 +213,7 @@ header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
     max-width: 350px; } }
 
 @-webkit-keyframes loader--display {
-  0%, 99% {
+  0%, 95% {
     height: 2.5em;
     margin: 200px auto 9999px auto;
     display: block; }
@@ -223,7 +223,7 @@ header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
     display: none; } }
 
 @keyframes loader--display {
-  0%, 99% {
+  0%, 95% {
     height: 2.5em;
     margin: 200px auto 9999px auto;
     display: block; }
@@ -411,14 +411,14 @@ aside {
     padding-left: 12px; }
   .restos__indv .fa-heart {
     position: absolute;
-    left: 300px;
+    right: 10%;
     margin-top: -20px;
     font-size: 2em; }
   .restos__indv--new {
     /*By default the label is available for each featured article, but is only displayed when required*/
     opacity: 0;
     position: absolute;
-    right: 42px;
+    right: 7%;
     margin-top: -160px;
     padding: 5px 10px;
     border-radius: 2px;
@@ -471,7 +471,7 @@ aside {
     margin-top: 10px; }
   .overlap-title .fa-heart {
     position: absolute;
-    left: 300px;
+    right: 10%;
     margin-top: -36px;
     font-size: 2em; }
 
@@ -488,20 +488,20 @@ aside {
     background-color: #99e2d0; }
 
 .appetizer__indv:nth-child(2), .meal__indv:nth-child(2), .dessert__indv:nth-child(2) {
-  -webkit-animation: indv--appear 1s 700ms both;
-          animation: indv--appear 1s 700ms both; }
-
-.appetizer__indv:nth-child(3), .meal__indv:nth-child(3), .dessert__indv:nth-child(3) {
   -webkit-animation: indv--appear 1s 800ms both;
           animation: indv--appear 1s 800ms both; }
 
+.appetizer__indv:nth-child(3), .meal__indv:nth-child(3), .dessert__indv:nth-child(3) {
+  -webkit-animation: indv--appear 1s 950ms both;
+          animation: indv--appear 1s 950ms both; }
+
 .appetizer__indv:nth-child(4), .meal__indv:nth-child(4), .dessert__indv:nth-child(4) {
-  -webkit-animation: indv--appear 1s 900ms both;
-          animation: indv--appear 1s 900ms both; }
+  -webkit-animation: indv--appear 1s 1100ms both;
+          animation: indv--appear 1s 1100ms both; }
 
 .appetizer__indv:nth-child(5), .meal__indv:nth-child(5), .dessert__indv:nth-child(5) {
-  -webkit-animation: indv--appear 1s 1000ms both;
-          animation: indv--appear 1s 1000ms both; }
+  -webkit-animation: indv--appear 1s 1250ms both;
+          animation: indv--appear 1s 1250ms both; }
 
 .appetizer__indv, .meal__indv, .dessert__indv {
   -webkit-box-shadow: 0px 10px 5px #eee;
@@ -601,6 +601,12 @@ footer {
     display: block;
     margin: 5px 0;
     text-decoration: none; }
+
+@media screen and (min-width: 625px) and (max-width: 900px) {
+  header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
+    padding: 20px 60px; }
+  .restos__indv--new {
+    right: 10%; } }
 
 /* Web adaptation of the app*/
 @media screen and (min-width: 900px) {

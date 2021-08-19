@@ -13,7 +13,7 @@ $tertiary:  #99e2d0;
 
 @mixin heart ($offset: 0) {
     position: absolute;
-    left: 300px;
+    right: 10%;
     margin-top: $offset;
     font-size: 2em;
 }
@@ -119,7 +119,7 @@ $tertiary:  #99e2d0;
 }
 
 @keyframes loader--display {
-    0%, 99% {
+    0%, 95% {
         height: 2.5em;
         margin: 200px auto 9999px auto;
         display: block;
@@ -324,7 +324,7 @@ aside {
 /*By default the label is available for each featured article, but is only displayed when required*/
             opacity: 0;
             position: absolute;
-            right:        42px;
+            right:          7%;
             margin-top: -160px;
             padding:  5px 10px;
             border-radius: 2px;
@@ -404,7 +404,7 @@ aside {
     
     @for $i from 2 through 5 {
         &__indv:nth-child(#{$i}) {
-            animation: indv--appear 1s 500ms + $i*100ms both;
+            animation: indv--appear 1s 500ms + $i*150ms both;
         }
     }
     &__indv {
@@ -506,6 +506,12 @@ footer {
         text-decoration: none;
     }
 }
+
+@media screen and (min-width: 625px) and (max-width: 900px) {
+    %default-padding {padding: 20px 60px;}
+    .restos__indv--new {right: 10%;}
+}
+
 
 /* Web adaptation of the app*/
 @media screen and (min-width: 900px) {
