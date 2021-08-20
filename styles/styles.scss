@@ -635,9 +635,9 @@ footer {
 
 /* Chromium engine styling */ 
 @supports (width:-webkit-fill-available) { 
-    @media screen and (max-width: 420px)
+    @media screen and (max-width: 320px)
     {.restos__indv--new {left: 1%;}}
-    @media screen and (min-width: 420px) and (max-width: 500px)
+    @media screen and (min-width: 320px) and (max-width: 500px)
     {.restos__indv--new {left: 80%;}}
     @media screen and (min-width: 500px) and (max-width: 750px)
     {.restos__indv--new {left: 84%;}}
