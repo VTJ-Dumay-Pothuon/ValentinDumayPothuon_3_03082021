@@ -352,7 +352,7 @@ aside {
     transition: opacity 300ms;
     background-color: $primary;
     background: linear-gradient(200deg, $primary 0%, $secondary 100%);
-    background-clip: text;
+    /*background-clip: text;*/
     -webkit-background-clip: text;
     color: transparent;
     cursor: pointer;
