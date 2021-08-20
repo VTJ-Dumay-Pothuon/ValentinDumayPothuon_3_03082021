@@ -34,6 +34,10 @@ $tertiary:  #99e2d0;
     font-size: 1.05em;
     color: white;
     cursor: pointer;
+    &:hover, &:active {
+        background: linear-gradient(355deg, lighten($primary, 5%) 0%, lighten($secondary, 5%) 100%);
+        @include block-shadow(#999);
+    }
 }
 
 @keyframes indv--appear {
@@ -75,20 +79,8 @@ $tertiary:  #99e2d0;
 }
 
 @keyframes checkfas--rotate {
-    from {
-        -ms-transform: rotate(0deg);
-        -moz-transform: rotate(0deg);
-        -webkit-transform: rotate(0deg);
-        -o-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-    to   {
-        -ms-transform: rotate(360deg);
-        -moz-transform: rotate(360deg);
-        -webkit-transform: rotate(360deg);
-        -o-transform: rotate(360deg);
-        tranform: rotate(360deg);
-    }
+    from {transform: rotate(0deg);}
+    to   {transform: rotate(360deg);}
 }
 
 @keyframes price--slide {
@@ -168,7 +160,8 @@ body {
     animation: loader--display 3s both, loader--load 3s -200ms both;
     color: #000000;
     font-size: 10px;
-    position: relative;
+    position: sticky;
+    top: 30%;
     &:before, &:after {
         animation: loader--load 3s both;
         content: '';
@@ -253,6 +246,7 @@ aside {
         margin: 10px;
         font-weight:  500;
         font-size: 1.05em;
+        white-space: nowrap;
         cursor: pointer;
         &:hover, &:active {
             background-color: #f5edff;
@@ -511,7 +505,7 @@ footer {
     }
     a {
         color: white;
-        font-size: 0.9;
+        font-size: 0.9em;
         font-weight: 400;
         display: block;
         margin: 5px 0;
@@ -561,7 +555,7 @@ footer {
         margin-left: 600px;
         background-color: transparent;
         @for $i from 2 through 10 {
-        :nth-child(#{$i}) {animation: indv--appear 1s 800ms + ($i/3)*100ms both;}
+        :nth-child(#{$i}) {animation: indv--appear 1s 800ms + ($i/3)*150ms both;}
         }
         &__btn {
             background-color: white;
@@ -584,6 +578,7 @@ footer {
             margin: 0 50px;
             img {height: 230px;}
             p {width: 95%;}
+            &:hover {@include block-shadow(#999);}
             &--new {
                 right: unset;
                 margin-left: 10px;
