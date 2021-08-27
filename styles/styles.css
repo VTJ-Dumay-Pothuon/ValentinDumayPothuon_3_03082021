@@ -612,7 +612,7 @@ footer {
     margin: 5px 0;
     text-decoration: none; }
 
-@media screen and (min-width: 625px) and (max-width: 900px) {
+@media screen and (min-width: 625px) and (max-width: 899px) {
   header a, .nav, .restos, .overlap-title, .appetizer, .meal, .dessert, footer {
     padding: 20px 60px; }
   .restos__indv--new {
@@ -756,13 +756,13 @@ footer {
 
 /* Chromium engine styling */
 @supports (width: -webkit-fill-available) {
-  @media screen and (min-width: 340px) and (max-width: 500px) {
+  @media screen and (min-width: 340px) and (max-width: 499px) {
     .restos__indv--new {
       left: 76%; } }
-  @media screen and (min-width: 500px) and (max-width: 750px) {
+  @media screen and (min-width: 500px) and (max-width: 749px) {
     .restos__indv--new {
       left: 84%; } }
-  @media screen and (min-width: 750px) and (max-width: 900px) {
+  @media screen and (min-width: 750px) and (max-width: 899px) {
     .restos__indv--new {
       left: 88%; } } }
 /*# sourceMappingURL=styles.css.map */
